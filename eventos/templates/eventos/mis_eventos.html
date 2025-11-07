@@ -16,9 +16,9 @@
 </div>
 
 <div style="margin-top: 20px;">
-    <a href="{% url 'blog:lista_eventos' %}" class="btn">Volver a la lista</a>
+    <a href="{% url 'lista_eventos' %}" class="btn">Volver a la lista</a>
     {% if user == evento.autor or user.is_staff %}
-        <a href="/admin/blog/evento/{{ evento.pk }}/change/" class="btn">Editar evento</a>
+        <a href="{% url 'editar_evento' %}" class="btn">Editar evento</a>
     {% endif %}
 </div>
 {% endblock %}

@@ -8,12 +8,12 @@
 
 <h3>Mis evento - Edición Avanzada</h3>
 
-{% if evento %}
+{% if eventos %}
     {% for evento in eventos %}
     <div class="card">
         <h3>{{ evento.titulo }}</h3>
         <p>{{ evento.contenido }}</p>
-        <a href="/admin/blog/evento/{{ evento.pk }}/change/" class="btn">Editar</a>
+        <a href="/admin/evento/{{ evento.pk }}/editar_evento/" class="btn">Editar</a>
     </div>
     {% endfor %}
 {% else %}
@@ -41,6 +41,6 @@ class Meta:
 </div>
 
 <div style="margin-top: 20px;">
-    <a href="{% url 'blog:lista_eventos' %}" class="btn">Volver al inicio</a>
+    <a href="{% url 'lista_eventos' %}" class="btn">Volver al inicio</a>
 </div>
 {% endblock %}

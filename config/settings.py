@@ -123,6 +123,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Login URL para redirección
-LOGIN_URL = '/admin/login/'
-LOGIN_REDIRECT_URL = '/lista-eventos'
-LOGOUT_REDIRECT_URL = '/lista-eventos' 
+LOGIN_URL = '/login/'  # Cambiar de '/admin/login/'
+LOGIN_REDIRECT_URL = '/'  # Cambiar de '/lista-eventos'
+LOGOUT_REDIRECT_URL = '/'  
