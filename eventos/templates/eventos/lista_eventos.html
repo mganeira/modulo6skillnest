@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de eventos{% endblock %}
+
+{% block content %}
+<h2>Lista de eventos (Vista Pública)</h2>
+
+{% if eventos %}
+    {% for evento in eventos %}
+    <div class="evento">
+        <h3>{{ evento.titulo }}</h3>
+        <p>{{ evento.contenido|truncatewords:30 }}</p>
+        <div class="meta">
+            Autor: {{ evento.autor.username }} | 
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No hay eventos disponibles.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Permiso Requerido{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 50px 0;">
+    <div style="font-size: 100px; color: #ff6b6b;">🔒</div>
+    
+    <h2 style="color: #ff6b6b; margin: 20px 0;">Permiso Requerido</h2>
+    
+    <div class="info" style="max-width: 600px; margin: 30px auto; background: #fff3cd; border-left-color: #ffc107;">
+        <p style="font-size: 1.1em; margin: 0;">
+            <strong>{{ mensaje }}</strong>
+        </p>
+        <p style="margin-top: 15px; color: #666;">
+            Hola <strong>{{ usuario.username }}</strong>, necesitas permisos especiales para editar eventos.
+        </p>
+    </div>
+    
+    <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; max-width: 600px; margin: 30px auto; border-left: 4px solid #2196F3;">
+        <h3 style="margin-top: 0; color: #1976D2;">ℹ️ Información</h3>
+        <p style="text-align: left; color: #555;">
+            Para poder editar eventos, necesitas que un administrador te otorgue el permiso <code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px;">eventos.change_evento</code>
+        </p>
+    </div>
+    
+    <div style="margin-top: 40px;">
+        <a href="{% url 'lista_eventos' %}" style="display: inline-block; padding: 12px 24px; background: #333; color: white; text-decoration: none; border-radius: 5px; margin: 0 10px;">
+            🏠 Ir al inicio
+        </a>
+        
+        <a href="{% url 'mis_eventos' %}" style="display: inline-block; padding: 12px 24px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; margin: 0 10px;">
+            📝 Ver mis eventos
+        </a>
+    </div>
+    
+    <div style="margin-top: 50px; padding: 20px; background: #f8f9fa; border-radius: 8px; max-width: 600px; margin: 50px auto 0;">
+        <h3 style="margin-top: 0;">🤔 ¿Cómo obtener permisos?</h3>
+        <ol style="text-align: left; color: #666; line-height: 2;">
+            <li>Contacta al administrador del sistema</li>
+            <li>Solicita el permiso "Can change evento"</li>
+            <li>Una vez otorgado, podrás editar eventos</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
