@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Eliminar tarea</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <main>
+        <h1>Eliminar tarea</h1>
+
+        <p>¿Está seguro de que desea eliminar la siguiente tarea?</p>
+
+        <section>
+            <ul>
+                <li><strong>Título:</strong> {{ tarea.titulo }}</li>
+                {% if tarea.descripcion %}
+                    <li><strong>Descripción:</strong> {{ tarea.descripcion }}</li>
+                {% endif %}
+                {% if tarea.fecha_limite %}
+                    <li><strong>Fecha límite:</strong> {{ tarea.fecha_limite }}</li>
+                {% endif %}
+                <li><strong>Completada:</strong> {{ tarea.completada|yesno:"Sí,No" }}</li>
+            </ul>
+        </section>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <button type="submit">Eliminar</button>
+            <a href="{{ cancel_url|default:'/' }}">Cancelar</a>
+        </form>
+    </main>
+</body>
+</html>
